@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Шифратор/Дешифратор</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 align="center">Представляем Вам Шифратор/Дешифратор</h1>
+    <h2 align="center">Написанный на JavaScript методом Цезаря</h2>
+    <div class="content">
+        <div class="knp"><button class="button-6" onclick="fun1()"><span>OK</span></button></div>
+        <div class="normal-container">
+            <div class="smile-rating-container">
+                <div class="smile-rating-toggle-container">
+                    <form class="submit-rating">
+                        <input id="meh"  name="r1" checked="checked"  type="radio" value="100"/> 
+                        <input id="fun" name="r1" type="radio" value="120"/> 
+                        <label for="meh" class="rating-label rating-label-meh">Расшифровать</label>
+                        <div class="smile-rating-toggle"></div>
+                        
+                        <div class="rating-eye rating-eye-left"></div>
+                        <div class="rating-eye rating-eye-right"></div>
+                        
+                        <div class="mouth rating-eye-bad-mouth"></div>
+                        
+                        <div class="toggle-rating-pill"></div>
+                        <label for="fun" class="rating-label rating-label-fun">Зашифровать</label>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript">
+
+
+function fun1() {
+    var n=7,a,f,op;
+  var rad=document.getElementsByName('r1');
+    for ( qw=0;qw<rad.length; qw++) {
+        if (rad[qw].checked) {
+         if ( qw==0){op=1}
+         if ( qw==1){op=2}
+         
+        
+}
+    }
+
+if(op ==2){
+var str = prompt("Введите предложение на русском",'');
+if (str==null) {return};
+var i,j;
+//var klup = /^[0-9]+$/;
+var r = /^[а-я ё 0-9 (-) . , ? %  # № @ " ' _ + {-} * / \ | =  ^ : ; $ ~ <-> # !]+$/i;
+//var y = /^[0-9]*$/;
+while(n>0){if(r.test(str)==false ){str = prompt("Снова ведите предложение на русском",'')};if (r.test(str)==true ) {break;}}
+while(n>0){if (str == null){str = prompt("Снова ведите предложение на русском","");}else{break}}
+//var klop=prompt("введите цифрой отступ от буквы");
+//while(n>0){if(klup.test(klop)==false ){klop = prompt("Снова введите цифрой отступ от буквы",'')};if (klup.test(klop)==true ) {break;}}
+//while(n>0){if (klop == null){klop = prompt("Снова введите цифрой отступ от буквы","");}else{break}}
+//alert(klop);
+
+var arr = (str || "").split("");
+
+var mra = ['а','б','в','г','д','е','ё','ж','з','и','й','к','л','м','н','о','п','р','с','т','у','ф','х','ц','ч','ш','щ','ъ','ы','ь','э','ю','я'];
+
+var bra=['А','Б','В','Г','Д','Е','Ё','Ж','З','И','Й','К','Л','М','Н','О','П','Р','С','Т','У','Ф','Х','Ц','Ч','Ш','Щ','Ъ','Ы','Ь','Э','Ю','Я'];
+
+var sra=['-',')','(','+','=','*','?',':',';','#','№','@','!','.',',','"','',"1","2","3","4","5","6","7","8","9","0"," "];    
+
+j=arr.length;
+h=mra.length;
+g=sra.length; 
+
+var t=[];
+
+
+for (i=0;i<j;i++){
+
+for (f=0;f<h;f++){    
+
+ff=f;
+
+if (f>h-2){ff=(f)-h};
+if (arr[i]==mra[f]) {a=mra[ff+1];t.push(a)};
+//if (arr[i]=="я") {a=mra[0];t.pop();t.push(a)};
+//if (arr[i]=="Я") {a="А";t.pop();t.push(a)};
+
+if (arr[i]==bra[f]) {a=bra[ff+1];t.push(a)};
+
+
+};
+
+for (f=0;f<g;f++){    
+
+
+if (arr[i]==sra[f]) {a=sra[f];t.push(a)};
+};
+
+};
+alert("Ваш зашифрованный текст:"+t.join(''));
+};
+if (op == 1) {
+
+
+
+var str = prompt("Введите зашифрованное предложение на русском",'');    
+if (str==null) {return};
+var i,j;
+//var klup = /^[0-9]+$/;
+var r = /^[а-я ё  0-9 (-) . , ? %  # № @ " ' _ + {-} * / \ | =  ^ : ; $ ~ <-> # !]+$/i;
+//var y = /^[0-9]*$/;
+while(n>0){if(r.test(str)==false ){str = prompt("Снова ведите зашифрованное предложение на русском",'')};if (r.test(str)==true ) {break;}}
+//var klop=prompt("введите цифрой отступ от буквы");
+//while(n>0){if(klup.test(klop)==false ){klop = prompt("Снова введите цифрой отступ от буквы",'')};if (klup.test(klop)==true ) {break;}}
+//while(n>0){if (klop == null){klop = prompt("Снова введите цифрой отступ от буквы","");}else{break}}
+//alert(klop);
+
+var arr = (str || "").split("");
+
+var mra = ['а','б','в','г','д','е','ё','ж','з','и','й','к','л','м','н','о','п','р','с','т','у','ф','х','ц','ч','ш','щ','ъ','ы','ь','э','ю','я'];
+
+var bra=['А','Б','В','Г','Д','Е','Ё','Ж','З','И','Й','К','Л','М','Н','О','П','Р','С','Т','У','Ф','Х','Ц','Ч','Ш','Щ','Ъ','Ы','Ь','Э','Ю','Я'];
+
+var sra=['-',')','(','+','=','*','?',':',';','#','№','@','!','.',',','"','',"1","2","3","4","5","6","7","8","9","0"," "];    
+
+j=arr.length;
+h=mra.length;
+g=sra.length; 
+
+var t=[];
+
+
+for (i=0;i<j;i++){
+
+for (f=0;f<h;f++){    
+
+ff=f;
+
+if (f>h){ff=(f)-h}
+
+if (arr[i]==mra[f]) {a=mra[ff-1];t.push(a)};
+if (arr[i]==bra[f]) {a=bra[ff-1];t.push(a)};
+if (arr[i]=="а") {a="я";t.pop();t.push(a)};
+if (arr[i]=="А") {a="Я";t.pop();t.push(a)};
+};
+
+for (f=0;f<g;f++){    
+
+
+if (arr[i]==sra[f]) {a=sra[f];t.push(a)};
+};
+
+};
+alert("Ваш расшифрованный текст:"+t.join(''));};
+};
+</script>
+</body>
+</html>
+
