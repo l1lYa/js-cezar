@@ -2,6 +2,7 @@ body{
     font-family: Roboto;
     background: linear-gradient(#862582, #6f1394) fixed;
 	overflow:  hidden;
+	padding-top: 180px;
 }
 
 body h1, h2 {
